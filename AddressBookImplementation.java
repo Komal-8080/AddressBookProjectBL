@@ -5,10 +5,29 @@ import java.util.Scanner;
 
 public class AddressBookImplementation implements AddressBookInterface {
 
-	 	public void addPerson() {
+	public static ArrayList<Person> personData = new ArrayList<Person>();
 
+	 	public void addPerson() {
+		     Scanner data = new Scanner(System.in);
+				System.out.println("Enter First Name");
+			 String firstName = data.nextLine();
+				System.out.println("Enter Last Name");
+			 String lastName = data.nextLine();
+				System.out.println("Enter Phone Number");
+			 String phone = data.nextLine();
+				System.out.println("Enter City Name");
+			 String city = data.nextLine();
+				System.out.println("Enter State ");
+			 String state = data.nextLine();
+				System.out.println("Enter Zip Code");
+			 String zip = data.nextLine();
+		      Person p = new Person(firstName, lastName, phone, city, state, zip);
+		      personData.add(p);
+			  System.out.println("Array of Person : "+personData);
 
 		}
+
+
 		public void editPerson() {
 
 
