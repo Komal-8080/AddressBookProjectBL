@@ -141,7 +141,13 @@ public class AddressBookImplementation implements AddressBookInterface {
 
 		public void sortByName() {
 
+		Collections.sort(personData, new NameComparator());
+			System.out.println("Person Details sorted by First Name\n");
 
+				for (Person p:personData) {
+					System.out.println(p.toString());
+
+			}
 		}
 
 
