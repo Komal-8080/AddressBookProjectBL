@@ -180,7 +180,9 @@ public class AddressBookImplementation implements AddressBookInterface {
 
 		public void display(){
 
+			for (Person p:personData) {
+				System.out.println(p.toString());
 
-
+			      }
 		}
 }
