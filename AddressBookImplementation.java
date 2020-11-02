@@ -164,7 +164,17 @@ public class AddressBookImplementation implements AddressBookInterface {
 
 		public void searchPerson() {
 
+		Scanner tosearch = new Scanner(System.in);
+			System.out.println("Enter person phone number to search person details");
+			String phone = tosearch.nextLine();
 
+			  	for (Person p:personData) {
+
+					  if (phone.equals(p.phone)) {
+						  System.out.println("Person Details are : \n" +p.toString());
+
+					 }
+			     }
 		}
 
 
