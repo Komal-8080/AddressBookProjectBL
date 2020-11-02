@@ -153,6 +153,12 @@ public class AddressBookImplementation implements AddressBookInterface {
 
 		public void sortByZip() {
 
+		Collections.sort(personData, new NameComparator());
+			System.out.println("Person Details sorted by Zip Code\n");
+
+				for (Person p:personData) {
+					System.out.println(p.toString());
+			}
 
 		}
 
