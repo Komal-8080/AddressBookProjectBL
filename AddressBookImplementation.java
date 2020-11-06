@@ -250,7 +250,7 @@ public class AddressBookImplementation implements AddressBookInterface {
 
 			      String line = "";
 			      fileReader = new BufferedReader(new FileReader("C:\\Users\\Gayatri\\eclipse-workspace\\Addressbookjava\\src\\addressbook\\files\\"+input+".csv"));
-			 
+
 			      // Read CSV header
 			      fileReader.readLine();
 
@@ -280,4 +280,14 @@ public class AddressBookImplementation implements AddressBookInterface {
 			        e.printStackTrace();
 			      }
 			  }
+
+			public void viewAddressBookList() {
+
+				File dir = new File("C:\\Users\\Gayatri\\eclipse-workspace\\Addressbookjava\\src\\addressbook\\files\\");
+	    			File[] list = dir.listFiles();
+	    				for(File file : list) {
+	    					System.out.println("Address Book:"+file.getName());	
+	    			}
+			}
+
 }
