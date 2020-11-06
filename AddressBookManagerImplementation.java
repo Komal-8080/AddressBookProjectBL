@@ -7,6 +7,48 @@ import java.util.Scanner;
 
 		public void newAddressBook() {
 
+			int newAb = 0;
+				while( newAb == 0 ) {
+
+					System.out.println("1] Press 1 to Create New Address Book\n" + "2] Back to Menu");
+					Scanner press = new Scanner(System.in);
+					int input = press.nextInt();
+
+						switch (input) {
+						 	case 1:
+						 		System.out.println("Enter Person Details");
+						 		addressBookImplementation.addPerson();
+		 							int fetchDetails = 0;
+		 							while(fetchDetails == 0 ) {
+		 								System.out.println("");
+		 								System.out.println("1]Enter 1 to Continue\n"+ "2]Enter 2 to Save Address Book" +"3] Enter 3 Back to Menu");
+		 								int in = press.nextInt();
+						 				switch (in) {
+						 					case 1:
+						 						addressBookImplementation.addPerson();
+						 						System.out.println("");
+						 							break;
+						 					case 2:
+						 						fetchDetails = 1;
+						 							break;
+						 					default:
+						 						System.out.println("Invalid Option");
+										 			break;
+						 				}
+
+		 							}
+						 	case 2:
+						 		System.out.println("Enter Address Book name to save person details in Address Book");
+ 								addressBookImplementation.writeData();
+ 								System.out.println("!!!Address Book Created Successfully!!!");
+						 	case 3:
+						 		newAb = 1;
+						 		break;
+						 	default:
+						 		System.out.println("Invalid Option");
+						 		break;
+						}
+				}
 
 		}
 
