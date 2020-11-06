@@ -23,7 +23,7 @@ public class AddressBookImplementation implements AddressBookInterface {
 			 String zip = data.nextLine();
 		      Person p = new Person(firstName, lastName, phone, city, state, zip);
 		      personData.add(p);
-			  System.out.println("Array of Person : "+personData);
+			 // System.out.println("Array of Person : "+personData);
 
 		}
 
@@ -36,7 +36,7 @@ public class AddressBookImplementation implements AddressBookInterface {
 			boolean exists = false;
 
 			  for (Person p:personData) {
-				  System.out.println(p.toString());
+				 // System.out.println(p.toString());
 
 					  if (firstName.equals(p.firstName)) {
 						  exists = true;
@@ -51,24 +51,25 @@ public class AddressBookImplementation implements AddressBookInterface {
 
 						  		Scanner option = new Scanner(System.in);
 						  		int num = option.nextInt();
-						  				switch (num) {							  					case 1:
+						  				switch (num) {
+											case 1:
 						  						System.out.println("Enter New Phone Number");
 						  						String phone = option.nextLine();
 						  						p.setPhone(phone);
 						  						System.out.println(p.toString());
-						  							break;
+												       break;
 						  					case 2:
 						  						System.out.println("Enter New City Name");
 						  						String city = option.nextLine();
 						  						p.setCity(city);
 						  						System.out.println(p.toString());
-						  							break;
+													break;
 						  					case 3:
 						  						System.out.println("Enter New State Name");
 						  						String state = option.nextLine();
 						  						p.setState(state);
 						  						System.out.println(p.toString());
-						  							break;
+													break;
 						  					case 4:
 						  						System.out.println("Enter New Zip Code");
 						  						String zip = option.nextLine();
@@ -79,7 +80,7 @@ public class AddressBookImplementation implements AddressBookInterface {
 						  						exists = false;
 						  							break;
 						  					default :
-						  						System.out.println("Invalid input");
+					  						System.out.println("Invalid input");
 						  							break;
 						  				}
 						  		}
@@ -184,5 +185,51 @@ public class AddressBookImplementation implements AddressBookInterface {
 				System.out.println(p.toString());
 
 			      }
+		}
+
+		public void writeData() {
+			final String CSV_HEADER = " firstName, lastName, phone, city, state, zip";
+			FileWriter fileWriter = null;
+			System.out.println("Enter Address Book name to save person details in Address Book");
+			Scanner BookName = new Scanner(System.in);
+			String input = BookName.nextLine();
+		    try {
+		      fileWriter = new FileWriter("C:\\Users\\Gayatri\\eclipse-workspace\\Addressbookjava\\src\\addressbook\\files\\"+input+".csv");
+		      fileWriter.append(CSV_HEADER);
+		      fileWriter.append('\n');
+		      System.out.println("personData"+personData);
+
+			      for (Person p:personData) {
+				        fileWriter.append(p.getFirstName());
+		        		fileWriter.append(',');
+		        		fileWriter.append(p.getLastName());
+		        		fileWriter.append(',');
+		        		fileWriter.append(p.getPhone());
+		        		fileWriter.append(',');
+		        		fileWriter.append(p.getCity());
+		        		fileWriter.append(',');
+		        		fileWriter.append(p.getState());
+		        		fileWriter.append(',');
+		        		fileWriter.append(p.getZip());
+		        		fileWriter.append('\n');
+		      		}
+		    	}
+
+		    catch (Exception e) {
+		      System.out.println("Writing CSV error!");
+		      e.printStackTrace();
+		    }
+
+		    finally {
+		      try {
+		      	  fileWriter.flush();
+		          fileWriter.close();
+		      }
+
+		      catch (IOException e) {
+		        System.out.println("Flushing/closing error!");
+		        e.printStackTrace();
+		      	}
+		    }
 		}
 }
