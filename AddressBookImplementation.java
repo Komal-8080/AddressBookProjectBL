@@ -199,11 +199,27 @@ public class AddressBookImplementation implements AddressBookInterface {
 
 		public void display(){
 
-			for (Person p:personData) {
-				System.out.println(p.toString());
+			int display = 0;
+				while (display == 0) {
+					System.out.println("1] To Open AddressBook\n" +"2] Back to Menu");
+					Scanner input = new Scanner(System.in);
+					int value = input.nextInt();
+						switch (value) {
+							case 1:
+								System.out.println("Enter Address Book name to dispaly person details");
+								readData();
+								break;
+							case 2:
+								display =1;
+								break;
+							default:
+								System.out.println("Invalid Entry");
+								break;
+						}
+				  }
 
-			      }
-		}
+			}
+
 
 		public void writeData() {
 			final String CSV_HEADER = " firstName, lastName, phone, city, state, zip";
