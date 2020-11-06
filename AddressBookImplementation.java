@@ -56,25 +56,41 @@ public class AddressBookImplementation implements AddressBookInterface {
 						  						System.out.println("Enter New Phone Number");
 						  						String phone = option.nextLine();
 						  						p.setPhone(phone);
-						  						System.out.println(p.toString());
+						  					//	System.out.println(p.toString());
+												System.out.println("*****Person Details Edited Successfully*****");
+						  						System.out.println("Enter Address Book name to save changes");
+						  					  	writeData();
+						  						System.out.println("*****Person Details Saved Successfully*****");
 												       break;
 						  					case 2:
 						  						System.out.println("Enter New City Name");
 						  						String city = option.nextLine();
 						  						p.setCity(city);
-						  						System.out.println(p.toString());
+						  					//	System.out.println(p.toString());
+												System.out.println("*****Person Details Edited Successfully*****");
+						  						System.out.println("Enter Address Book name to save changes");
+						  						writeData();
+						  						System.out.println("*****Person Details Saved Successfully*****");
 													break;
 						  					case 3:
 						  						System.out.println("Enter New State Name");
 						  						String state = option.nextLine();
 						  						p.setState(state);
-						  						System.out.println(p.toString());
+						  					//	System.out.println(p.toString());
+												System.out.println("*****Person Details Edited Successfully*****");
+						  						System.out.println("Enter Address Book name to save changes");
+						  					  	writeData();
+						  						System.out.println("*****Person Details Saved Successfully*****");
 													break;
 						  					case 4:
 						  						System.out.println("Enter New Zip Code");
 						  						String zip = option.nextLine();
 						  						p.setZip(zip);
-						  						System.out.println(p.toString());
+						  					//	System.out.println(p.toString());
+												System.out.println("*****Person Details Edited Successfully*****");
+						  						System.out.println("Enter Address Book name to save changes");
+						  					  	writeData();
+						  						System.out.println("*****Person Details Saved Successfully*****");
 						  							break;
 						  					case 5:
 						  						exists = false;
