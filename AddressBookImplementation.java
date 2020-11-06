@@ -133,6 +133,8 @@ public class AddressBookImplementation implements AddressBookInterface {
 										switch (entry) {
 											case 1:
 												personData.remove(i);
+												readData();
+												writeData();
 												System.out.println("Person details deleted");
 											 		break;
 											case 2:
