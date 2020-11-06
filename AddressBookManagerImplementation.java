@@ -38,9 +38,7 @@ import java.util.Scanner;
 
 		 							}
 						 	case 2:
-						 		System.out.println("Enter Address Book name to save person details in Address Book");
- 								addressBookImplementation.writeData();
- 								System.out.println("!!!Address Book Created Successfully!!!");
+						 		saveAsAddressBook(); 
 						 	case 3:
 						 		newAb = 1;
 						 		break;
@@ -106,6 +104,9 @@ import java.util.Scanner;
 
 		public void saveAsAddressBook() {
 
+			System.out.println("Enter Address Book name to save person details in Address Book");
+ 			addressBookImplementation.writeData();
+ 			System.out.println("!!!Address Book Created Successfully!!!");
 
 		}
 
