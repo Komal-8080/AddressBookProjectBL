@@ -142,7 +142,9 @@ import java.util.Scanner;
 
 
 		public void closeAddressBook() {
-
+			System.out.println("Enter Address Book name to save AddressBook");
+			addressBookImplementation.writeData();
+			System.out.println("*****Address Book Saved Successfully*****");
 
 		}
 }
