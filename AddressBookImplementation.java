@@ -232,4 +232,52 @@ public class AddressBookImplementation implements AddressBookInterface {
 		      	}
 		    }
 		}
+
+		public void readData() {
+
+	            final int firstName = 0;
+		    final int lastName = 1;
+		    final int phone = 2;
+		    final int city = 3;
+		    final int state = 4;
+		    final int zip = 5;
+			    BufferedReader fileReader = null;
+			    System.out.println("Enter File Name you want to open");
+		  	    Scanner BookName = new Scanner(System.in);
+		    	    String input = BookName.nextLine();
+
+			    try {
+
+			      String line = "";
+			      fileReader = new BufferedReader(new FileReader("C:\\Users\\Gayatri\\eclipse-workspace\\Addressbookjava\\src\\addressbook\\files\\"+input+".csv"));
+			 
+			      // Read CSV header
+			      fileReader.readLine();
+
+			      // Read person data line by line
+			      while ((line = fileReader.readLine()) != null) {
+			      	  String[] tokens = line.split(",");
+			        	if (tokens.length > 0) {
+			        	Person p = new Person(tokens[firstName], tokens[lastName], tokens[phone], tokens[city], tokens[state], tokens[zip]);
+			    		personData.add(p);
+			               }
+			      }
+
+			    for (Person p:personData) {
+				System.out.println(p.toString());
+					      }
+			    }
+			    catch (Exception e) {
+			      System.out.println("Reading CSV Error!");
+			      e.printStackTrace();
+			    }
+			    finally {
+			      try {
+			        fileReader.close();
+			      }
+			      catch (IOException e) {
+			        System.out.println("Closing fileReader Error!");
+			        e.printStackTrace();
+			      }
+			  }
 }
